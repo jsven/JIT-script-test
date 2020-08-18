@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<style>
+  .button{
+    margin: 30px;
+    padding: 20px;
+    color: white;
+    background-color: red;
+  }
+</style>
+<body>
+<div>
+  <input value="100000" id="_input">
+  <div class="button" onclick="_number()">
+    测试数字求和
+  </div>
+  <div class="button" onclick="_string()">
+    测试字符拼接
+  </div>
+</div>
+</body>
+<script>
+  var length;
+  var _date = new Date();
+  function _calc(data, init){
+    let test = data.reduce((pre, next) => pre + next, init)
+    console.log();
+  }
+function _number (){
+  length = document.querySelector('#_input').value;
+  let numberArray = new Array(+length).fill(0).map((item, index) => length - index);
+  let time1 = new Date().getTime();
+  _calc(numberArray, 0);
+  console.log(new Date().getTime() - time1);
+}
+function _string (){
+  length = document.querySelector('#_input').value;
+  let numberArray = new Array(+length).fill(0).map((item, index) => length - index);
+  let time1 = new Date().getTime();
+  _calc(numberArray, '0');
+  console.log(new Date().getTime() - time1);
+}
+</script>
+</html>
